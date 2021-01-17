@@ -1465,6 +1465,38 @@ class PHPBuilder implements Builder
     }
 
     /**
+     * Builds a new match block.
+     *
+     * <code>
+     * match($x) {
+     *   "foo" => "bar",
+     * }
+     * </code>
+     *
+     * @return \PDepend\Source\AST\ASTMatchBlock
+     * @since  2.9.0
+     */
+    public function buildAstMatchBlock()
+    {
+        return $this->buildAstNodeInstance('\\PDepend\\Source\\AST\\ASTMatchBlock');
+    }
+
+    /**
+     * Builds a new match item.
+     *
+     * <code>
+     * "foo" => "bar",
+     * </code>
+     *
+     * @return \PDepend\Source\AST\ASTMatchEntry
+     * @since  2.9.0
+     */
+    public function buildAstMatchEntry()
+    {
+        return $this->buildAstNodeInstance('\\PDepend\\Source\\AST\\ASTMatchEntry');
+    }
+
+    /**
      * Builds a new array type node.
      *
      * @return \PDepend\Source\AST\ASTTypeArray
